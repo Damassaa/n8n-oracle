@@ -15,4 +15,5 @@ USER node
 
 EXPOSE 5678
 
-CMD ["n8n"]
+# Usar o mesmo comando da imagem original
+CMD ["tini", "--", "/usr/local/bin/n8n"]
