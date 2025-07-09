@@ -2,10 +2,8 @@ FROM n8nio/n8n:latest
 
 USER root
 
-# Instalar dependências do Oracle
-RUN apt-get update && apt-get install -y \
-    libaio1 \
-    && rm -rf /var/lib/apt/lists/*
+# Instalar dependências do Oracle (Alpine Linux)
+RUN apk add --no-cache libaio
 
 # Instalar o plugin Oracle
 RUN npm install -g n8n-nodes-oracle-database-parameterization
